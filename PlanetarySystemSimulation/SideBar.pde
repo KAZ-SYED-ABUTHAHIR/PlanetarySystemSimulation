@@ -106,13 +106,13 @@ public class SideBar extends Widget implements Focusable
 
   void render() {
     pushMatrix();
-
+     
     if (this.children.size()>0) {
       for (Widget w : this.children) {
         w.render();
       }
     }
-
+    imageMode(CORNER);
     image(this.self, this.leftPos, this.topPos);
     float target = (this.slide<0)?(-this.barWidth+this.handleWidth):(0);
     float diff = abs(target-this.leftPos);
